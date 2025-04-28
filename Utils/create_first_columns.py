@@ -1,8 +1,19 @@
+
+# USO
+#ruta = r"D:\AAUNIVERSIDAD\Practicas empresa\Proyecto\PYTHON\Proyecto NACAS\pythonProject1\Xfoil"
+#col_1, col_1_1, col_1_2, col_1_3 = crear_columnas_nombres(ruta)
+
+# Mostrar resultados
+#for i in range(len(col_1)):
+#    print(f"{col_1[i]}  {col_1_1[i]}  {col_1_2[i]}  {col_1_3[i]}")
+
+
+
 import os
 def extraer_NACA_nums(nombre):
     codigo = nombre[4:8]
     return [codigo[0], codigo[1], codigo[2:]]
-def crear_listas(ruta):
+def crear_columnas_nombres(ruta):
     # Paso 1: Extraer los nombres de los archivos
     archivos = [f[:-4] for f in os.listdir(ruta) if f.startswith('NACA') and f.endswith('.txt')]
     col_1 = archivos
@@ -20,10 +31,3 @@ def crear_listas(ruta):
 
     return col_1, col_1_1, col_1_2, col_1_3
 
-# USO
-ruta = r"D:\AAUNIVERSIDAD\Practicas empresa\Proyecto\PYTHON\Proyecto NACAS\pythonProject1\Xfoil"
-col_1, col_1_1, col_1_2, col_1_3 = crear_listas(ruta)
-
-# Mostrar resultados
-for i in range(len(col_1)):
-    print(f"{col_1[i]}  {col_1_1[i]}  {col_1_2[i]}  {col_1_3[i]}")
